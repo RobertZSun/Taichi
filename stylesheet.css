@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#text_container,
+#effect_container {
+    height: 100vh;
+    width: 50vw;
+}
+
+#text_container {
+    background-color: lightgray;
+    padding: 8px;
+    word-break: break-all;
+    overflow: auto;
+    font-size: 20px;
+}
+
+
+#effect_container {
+    position: absolute;
+    left: 50vw;
+    top: 0;
+}
+
+#taiChi {
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-sizing: content-box;
+}
+
+#taiChi::before,
+#taiChi::after {
+    content: '';
+    display: block;
+    position: absolute;
+}
+
+span {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+
+
+@media screen and (max-width:600px) {
+    body {
+        position: relative;
+    }
+
+    #text_container,
+    #effect_container {
+        height: 50vh;
+        width: 100vw;
+    }
+
+    #text_container {
+        overflow: auto;
+        font-size: 16px
+    }
+
+    #effect_container {
+        left: 0;
+        top: 50vh;
+    }
+
+    #taiChi {
+        width: 50vw;
+        height: 50vw;
+    }
+
+    #taiChi::before,
+    #taiChi::after {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    #taiChi::before {
+        left: 12.5vw;
+        top: 0;
+    }
+
+    #taiChi::after {
+        left: 12.5vw;
+        top: 25vw;
+    }
+}
